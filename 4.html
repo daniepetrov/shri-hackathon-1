@@ -1,17 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-</head>
-<body>
-  <h1>Задача 4</h1>
-  
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Задача 4</h1>
+  </body>
 
-<script>
-  
-</script>
+  <script>
+    const tree2 = {
+      value: 40,
+      children: [
+        {
+          value: 200,
+          children: [
+            {
+              value: 40,
+            },
+            {
+              value: 50,
+            },
+            {
+              value: 60,
+            },
+          ],
+        },
+        {
+          value: 150,
+          children: [
+            {
+              value: 80,
+            },
+            {
+              value: 90,
+            },
+          ],
+        },
+      ],
+    };
+
+    function depthWalk(tree) {
+      if(tree.value) {
+        console.log(tree.value)
+      }
+      
+      if(!tree.children || tree.children.length === 0) {
+          return
+      }
+      
+      for(let i = 0; i < tree.children.length; i++) {
+        const child = tree.children[i]
+        depthWalk(child)
+      }
+    }
+  </script>
 </html>
