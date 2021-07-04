@@ -13,10 +13,10 @@
   <script>
 
     const str = '(([{()}]))'
-    let last
 
     function strBalance(str) {
       let stack1 = []
+      let last
 
       for (let i = 0; i < str.length; i++) {
         let cur = str[i]
