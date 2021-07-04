@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Задача 4</h1>
+  </body>
+
+  <script>
+
+    const str = '(([{()}]))'
+    let last
+
+    function strBalance(str) {
+      let stack1 = []
+
+      for (let i = 0; i < str.length; i++) {
+        let cur = str[i]
+        if(cur === '(' || cur === '{' || cur === '[') {
+         stack1.push(cur)
+        } else {
+          if(stack1.length !== 0) {
+           last = stack1.pop()
+           if(!complement(cur, last)) {
+            return 'Баланс нарушен'
+           }
+          } else {
+            return 'Баланс нарушен'
+          }
+        }
+      }
+
+      return 'Баланс соблюден'
+
+
+      function complement(par1, par2) {
+        if(par1 === ')' && par2 == '(') return true
+        if(par1 === '}' && par2 == '{') return true
+        if(par1 === ']' && par2 == '[') return true
+
+        return false
+      }
+    }
+
+
+  </script>
+</html>
